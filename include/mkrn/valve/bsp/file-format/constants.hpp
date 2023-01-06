@@ -42,7 +42,7 @@ enum class contents
     unused4       = 0x400,
     unused5       = 0x800,
     unused6       = 0x1000,
-    unused7       = 0x2000,
+    ignore_nodraw_opqaque = 0x2000,
     /// <summary>
     /// hits entities which are movetype_push (doors, plats, etc.)
     /// </summary>

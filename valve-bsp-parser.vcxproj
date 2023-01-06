@@ -40,6 +40,7 @@
     <ClInclude Include="include\mkrn\valve\bsp\file-format\polygon.hpp" />
     <ClInclude Include="include\mkrn\valve\bsp\file-format\snode.hpp" />
     <ClInclude Include="include\mkrn\valve\bsp\file-format\texinfo.hpp" />
+    <ClInclude Include="include\mkrn\valve\bsp\file-format\texdata.hpp" />
     <ClInclude Include="include\mkrn\valve\bsp\file-format\trace.hpp" />
     <ClInclude Include="include\mkrn\valve\bsp\file-format\valve_structs.hpp" />
     <ClInclude Include="include\mkrn\valve\bsp\file-format\vertex.hpp" />

@@ -117,6 +117,9 @@
     <ClInclude Include="include\mkrn\valve\bsp\file-format\texinfo.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\mkrn\valve\bsp\file-format\texdata.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\mkrn\valve\bsp\file-format\vertex.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

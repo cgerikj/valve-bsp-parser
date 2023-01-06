@@ -19,6 +19,7 @@
 #include <mkrn/valve/bsp/file-format/polygon.hpp>
 #include <mkrn/valve/bsp/file-format/snode.hpp>
 #include <mkrn/valve/bsp/file-format/texinfo.hpp>
+#include <mkrn/valve/bsp/file-format/texdata.hpp>
 #include <mkrn/valve/bsp/file-format/trace.hpp>
 #include <mkrn/valve/bsp/file-format/vertex.hpp>
 #include <mkrn/valve/bsp/file-format/vplane.hpp>
@@ -248,12 +249,15 @@ public:
     std::vector<bsp::snode_t>      nodes;
     std::vector<bsp::dface_t>      surfaces;
     std::vector<bsp::texinfo_t>    tex_infos;
+    std::vector<bsp::texdata_t>    tex_datas;
     std::vector<bsp::dbrush_t>     brushes;
     std::vector<bsp::dbrushside_t> brush_sides;
     std::vector<std::uint16_t>     leaf_faces;
     std::vector<std::uint16_t>     leaf_brushes;
     std::vector<bsp::polygon>      polygons;
     std::vector<bsp::entity_t>     entities;
+    std::vector<int>               texdataStringTable;
+    std::vector<char>              texdataStringData;
 private:
     mutable std::shared_timed_mutex  _mutex;
 };
