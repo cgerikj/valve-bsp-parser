@@ -769,7 +769,7 @@ bool bsp_parser::load_map(
                     break;
 
             }
-            case bsp::lump_t::id::texdata_string_data: {
+            case bsp::lump_t::id::texdata_string_table {
                 auto _oldLump = texdataStringTable;
                 if (!parse_lump(file,bsp::lump_t::id::texdata_string_table,texdataStringTable),std::make_optional(lumpFileHeader)) {
                     texdataStringTable = _oldLump;
