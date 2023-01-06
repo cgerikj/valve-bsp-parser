@@ -23,13 +23,15 @@ project ("valve-bsp-parser")
 #Research from leak: This functionality is "temporarily" disabled from the multiplayer games, due to possibility of exploits. sv_pure cannot detect such patches. The comment cites a wallhack as an example.
 # Dodaj źródło do pliku wykonywalnego tego projektu.
 set (PRIVATE_INCLUDES
-    "include/valve-bsp-parser/bsp_parser.hpp"
-    "include/valve-bsp-parser/core/matrix.hpp"
-    "include/valve-bsp-parser/core/requirements.hpp"
-    "include/valve-bsp-parser/core/valve_structs.hpp")
+    "include/mkrn/valve/bsp/bsp_parser.hpp"
+    "include/mkrn/math/matrix.hpp"
+    "include/mkrn/core/requirements.hpp"
+    "include/mkrn/valve/bsp/file-format/valve_structs.hpp"
+)
 
 set (SOURCES 
-"src/bsp_parser.cpp")
+    "src/valve/bsp_parser.cpp"
+)
 
 add_library(valve-bsp-parser STATIC  ${PRIVATE_INCLUDES} ${SOURCES})
 
