@@ -39,12 +39,15 @@ bsp_parser& bsp_parser::operator = (
     nodes        = std::move( rhs.nodes );
     surfaces     = std::move( rhs.surfaces );
     tex_infos    = std::move( rhs.tex_infos );
+    tex_datas    = std::move( rhs.tex_datas );
     brushes      = std::move( rhs.brushes );
     brush_sides  = std::move( rhs.brush_sides );
     leaf_faces   = std::move( rhs.leaf_faces );
     leaf_brushes = std::move( rhs.leaf_brushes );
     polygons     = std::move( rhs.polygons );
     entities     = std::move( rhs.entities );
+    texdataStringTable = std::move( rhs.texdataStringTable );
+    texdataStringData = std::move( rhs.texdataStringData );
 
     return *this;
 }
@@ -63,11 +66,14 @@ void bsp_parser::unload_map()
     nodes.clear();
     surfaces.clear();
     tex_infos.clear();
+    tex_datas.clear();
     brushes.clear();
     brush_sides.clear();
     leaf_faces.clear();
     leaf_brushes.clear();
     polygons.clear();
+    texdataStringTable.clear();
+    texdataStringData.clear();
 }
 
 bool bsp_parser::set_current_map(
@@ -736,6 +742,13 @@ bool bsp_parser::load_map(
                     break;
 
             }
+            case bsp::lump_t::id::tex_data: {
+                auto _oldLump = tex_datas;
+                if (!parse_lump(file,bsp::lump_t::id::tex_data,tex_datas),std::make_optional(lumpFileHeader)) {
+                    tex_datas = _oldLump;
+                }
+                break;
+            }
             case bsp::lump_t::id::brushes: {
 
 
@@ -755,6 +768,20 @@ bool bsp_parser::load_map(
                 }
                     break;
 
+            }
+            case bsp::lump_t::id::texdata_string_data: {
+                auto _oldLump = texdataStringTable;
+                if (!parse_lump(file,bsp::lump_t::id::texdata_string_table,texdataStringTable),std::make_optional(lumpFileHeader)) {
+                    texdataStringTable = _oldLump;
+                }
+                break;
+            }
+            case bsp::lump_t::id::texdata_string_data: {
+                auto _oldLump = texdataStringData;
+                if (!parse_lump(file,bsp::lump_t::id::texdata_string_data,texdataStringData),std::make_optional(lumpFileHeader)) {
+                    texdataStringData = _oldLump;
+                }
+                break;
             }
             case bsp::lump_t::id::leaf_faces: {
 
